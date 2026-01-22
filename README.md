@@ -1,4 +1,4 @@
-# Containerized Tensorflow GPU development environment
+# Containerized TensorFlow GPU development environment
 
 A containerized TensorFlow AI/ML development environment with NVIDIA GPU support. This repository provides a consistent development environment using VS Code Dev Containers, eliminating the need for manual environment setup.
 
