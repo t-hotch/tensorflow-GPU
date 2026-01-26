@@ -146,7 +146,15 @@ git merge upstream/main
 
 ## TensorBoard
 
-When the container starts, TensorBoard will start and port 6006 will be published automatically via Docker so that you can access it in a web browser on the host machine. The TensorBoard VS Code extension is also installed by default, so you can access TensorBoard from inside the container by finding `Python: Launch TensorBoard` in the command palette.
+When the container starts, TensorBoard will start and port 6006 will be published automatically via Docker so that you can access it in a web browser on the host machine. Place TensorBoard logs in the `logs/` directory at the project root.
+
+TensorBoard runs inside of a screen, you can attach to the session with:
+
+```text
+screen -r tensorboard
+```
+
+The TensorBoard VS Code extension is also installed by default, so you can access TensorBoard from inside the container by finding `Python: Launch TensorBoard` in the command palette.
 
 ---
 
