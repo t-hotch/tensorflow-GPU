@@ -1,6 +1,6 @@
 # TensorFlow GPU Development Environment
 
-A ready-to-use TensorFlow environment with NVIDIA GPU support for VS Code.
+A ready-to-use TensorFlow environment with NVIDIA GPU support for VS Code. Designed for cross-platform support and wide GPU compatibility.
 
 ## What's Included
 
@@ -15,8 +15,6 @@ Based on [NVIDIA's TensorFlow 24.06 container](https://docs.nvidia.com/deeplearn
 
 > **No NVIDIA GPU?** Use the CPU version instead: [gperdrizet/tensorflow-CPU](https://github.com/gperdrizet/tensorflow-CPU)
 
----
-
 ## Requirements
 
 - **NVIDIA GPU** (Pascal or newer) with driver ≥545
@@ -25,7 +23,23 @@ Based on [NVIDIA's TensorFlow 24.06 container](https://docs.nvidia.com/deeplearn
 
 > **Linux users:** Also install the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
 
----
+### GPU Compatibility
+
+This environment requires an NVIDIA GPU with **compute capability 6.0+** (Pascal architecture or newer):
+
+| Architecture | Example GPUs | Compute Capability |
+|--------------|--------------|-------------------|
+| Pascal | GTX 1050–1080, Tesla P100 | 6.0–6.1 |
+| Volta | Tesla V100, Titan V | 7.0 |
+| Turing | RTX 2060–2080, GTX 1660 | 7.5 |
+| Ampere | RTX 3060–3090, A100 | 8.0–8.6 |
+| Ada Lovelace | RTX 4060–4090 | 8.9 |
+| Hopper | H100, H200 | 9.0 |
+| Blackwell | RTX 5070–5090, B100, B200 | 10.0 |
+
+Check your GPU's compute capability: [NVIDIA CUDA GPUs](https://developer.nvidia.com/cuda-gpus)
+
+> **Note:** This environment is configured for broad GPU compatibility, supporting Pascal and newer architectures. If you have a recent GPU (Ada Lovelace, Hopper, or Blackwell), you may benefit from using a newer CUDA version to access the latest performance optimizations and features. Consider setting up a custom environment with an updated [NVIDIA TensorFlow container](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/tensorflow) to take full advantage of your hardware.
 
 ## Quick Start
 
@@ -46,13 +60,9 @@ Based on [NVIDIA's TensorFlow 24.06 container](https://docs.nvidia.com/deeplearn
 
 5. **Verify** by running `notebooks/environment_test.ipynb`
 
----
-
 ## TensorBoard
 
 TensorBoard starts automatically and is available at **http://localhost:6006**. Place your logs in the `logs/` directory.
-
----
 
 ## Adding Python Packages
 
@@ -86,8 +96,6 @@ For persistent packages that survive container rebuilds:
 
 Now your packages will be automatically installed whenever the container is created.
 
----
-
 ## Keeping Your Fork Updated
 
 ```bash
@@ -98,8 +106,6 @@ git remote add upstream https://github.com/gperdrizet/tensorflow-GPU.git
 git fetch upstream
 git merge upstream/main
 ```
-
----
 
 ## Troubleshooting
 
